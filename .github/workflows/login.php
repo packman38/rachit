@@ -2,8 +2,10 @@
 session_start();
 include('assets/phpscript/FormatedOutput.php');
 $err="";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include('assets/Database/DBMySql.php');$DB=new DBMySql;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {                             //$_SERVER['REQUEST_METHOD'] contains the request method (surprise).
+
+                                                                        //$_POST contains any post data
+   include('assets/Database/DBMySql.php');$DB=new DBMySql;
     $Email =  $_POST["Email"];
 
     $PWD =  $_POST["PWD"];
