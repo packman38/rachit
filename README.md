@@ -1,5 +1,5 @@
-# rachit
-This is a thorough readme of all the files which are part of my project.I have put the comments in the code itself.
+                                          # PROJECT WALKTHROUGH
+This is a thorough readme of all the files which are part of my project.I have used various sql queries as needed. 
 
 File name:db.sql
 This is the file in which two tables are made.The first table made has the name "bookings".It is used to store the bookings made by the customers and it has various booking details 
