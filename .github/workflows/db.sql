@@ -3,8 +3,6 @@ SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.5.51-38.1-log : Database - mydemodb
 *********************************************************************
 */
-
-
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
@@ -41,16 +39,26 @@ insert  into `bookings`(`BID`,`UserName`,`MovieName`,`MovieTime`,`Mobile`,`Booki
 DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
- `UID` int(11) NOT NULL AUTO_INCREMENT,
- `UserName` varchar(50) DEFAULT NULL,
- `PWD` varchar(20) DEFAULT NULL,
- `CustomerID` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`UID`)
+  `UID` int(11) NOT NULL AUTO_INCREMENT,
+  `UserName` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) DEFAULT NULL,
+  `PWD` varchar(20) DEFAULT NULL,
+  `Mobile` varchar(15) NOT NULL,
+  `Address` varchar(200) DEFAULT NULL,
+  `Status` varchar(10) DEFAULT 'Free',
+  `Description` varchar(1000) DEFAULT 'No Description',
+  `UserType` varchar(10) DEFAULT 'User',
+  `Balance` int(11) DEFAULT '10000',
+  `RegisteredOn` datetime DEFAULT NULL,
+  `Aadhar` varchar(12) DEFAULT '000000000000',
+  `PAN` varchar(10) DEFAULT 'xxxxxxxxxx',
+  `CustomerID` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`UID`,`Mobile`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 /*Data for the table `users` */
 
-insert  into `users`(`UID`,`UserName`,`PWD`,`CustomerID`) values (1,'Admin','aa','1'),(2,'Rachit','aa','CUST113107');
+insert  into `users`(`UID`,`UserName`,`Email`,`PWD`,`Mobile`,`Address`,`Status`,`Description`,`UserType`,`Balance`,`RegisteredOn`,`Aadhar`,`PAN`,`CustomerID`) values (1,'Admin','admin@gmail.com','aa','7007502987','F-61 Samar vihar Colony, Alambagh Lucknow','Approved','No Description','Admin',20000,'2019-03-01 17:21:30','000000000000','9182736455','1'),(2,'Rachit','rachit@gmail.com','aa','7355129703','PANNO1234XPANNO1234XPANNO1234X','Free','No Description','Employee',10000,'2020-05-07 23:31:59','111111111111','PANNO1234X','CUST113107'),(3,'Jai Hind','hindjai005@gmail.com','aa','9935125967','Home no. 49, senani vehar\r\nPGI road, telibagh','Free','No Description','Employee',10000,'2020-06-10 01:03:02','332571199003','AWSPH3337S','CUST080302'),(4,'Shivam Sharma','shivamsharma.10oct@gmail.com','aa','8173857854','3/163 vinamra khand gomti nagar\r\nnear amity international school','Free','No Description','Employee',10000,'2020-06-10 01:04:17','252345345222','AWSTH3337S','CUST080417'),(19,'Employee','emp@gmail.com','aa','',NULL,'Free','No Description','Employee',10000,NULL,'000000000000','xxxxxxxxxx',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
