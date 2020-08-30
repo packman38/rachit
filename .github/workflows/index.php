@@ -1,13 +1,5 @@
 <?php
 if(session_status()==1)session_start();
-//include('assets/database/DBMySql.php');$db=new DBMySql();
-//$UID='1';if(isset($_POST['UID'])){$UID=$_POST['UID']; }
-//$Users=$db->GetResult('Select * from users where UID='.$UID);
-//$arr=array();
-//while($row= $Users->fetch_assoc()){
-//    array_push($arr,$row);
-//}
-//echo json_encode($arr,JSON_PRETTY_PRINT);
 
 ?>
 
